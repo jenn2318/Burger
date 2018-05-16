@@ -7,8 +7,10 @@ USE burgers_db;
 
 CREATE TABLE burgers (
 id INT NOT NULL AUTO_INCREMENT,
-item_id INTEGER(50) NOT NULL,
-burger_name VARCHAR(150) NOT NULL,
+burger_name VARCHAR(100) NOT NULL,
 devoured BOOLEAN,
 PRIMARY KEY (id);
 );
+
+
+SELECT * FROM burgers;
