@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/burger.css">
+</head>
+<body>
+
+
+    <div class="container">
+        <div class="row">
+         <img src="images/burgerpic.jpg">
+     </div>
+        <h1 class="big">Eat da Burger!</h1>
+<hr>
+        <!--This is where the content from index.handlebars will go-->
+
+    {{{body}}}
+
+<br><br>
+
+<form action="burger/make" method="POST">
+    <div class="row"></div>
+        <div class="col-md-3"></div>
+        <!--Burger Input-->
+           <div class="form-group col-md-6">
+              <label for="new_burger" class="blue_font">Request a Burger!</label>
+              <textarea class="form-control" columns="7" rows="3" id="new_burger" name="burger_name"></textarea>
+            </div>
+         <div class="col-md-3"></div>
+      <!--Submit Button-->
+    <button id="submit-button" type="submit" class="btn btn-success">Place Order</button>
+
+       </form>
+    </div>
+  </body>
+</html>

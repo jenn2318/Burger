@@ -1,15 +1,4 @@
-let connection = require('/connection.js');
-
-
-//Connection to the MySQL burgers_db
-
-connection.connect(function(err) {
-    if (err) {
-        console.err('error connecting:' + err.stack);
-        return;
-    };
-    console.log('connected as id' + connection.threadID);
-});
+let connection = require('./connection.js');
 
 
 //Query to grab all the burgers

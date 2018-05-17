@@ -22,7 +22,6 @@ let burger = {
             callback(res);
         });
     }
-https://jamesreinknecht.com/burger/
 
 }
 
