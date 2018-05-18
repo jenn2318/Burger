@@ -6,7 +6,7 @@ let connection = require('./connection.js');
 let orm = {
 
     selectAll: function(callback) {
-        connection.query("SELCT * FROM burgers", function(err, result){
+        connection.query("SELECT * FROM burgers", function(err, result){
             if (err) throw (err);
             callback(result);
         });
@@ -14,17 +14,13 @@ let orm = {
 
     //Query to insert the burger
 
-    insertOne: function(burger_name, callback) {
-        connection.query('INSERT INTO burgers SET ?', function(err, result) {
-            burger_name: burger_name;
-                devoured: false;
-            if (err) throw (err);
-            callback(result);
-        }); //function(err, result) {
-            //if (err) throw (err);
-            //callback(result);
-        //});
+    insertOne: function(name, callback) {
+        let query = `INSERT INTO burgers (burger_name, devoured) VALUES ('${name}', "false")`;
 
+        connection.query(query, function(err, result) {
+            if (err) throw err;
+            callback(result);
+        });
     },
 
 
@@ -32,8 +28,8 @@ let orm = {
 
     updateOne: function(burgerID, callback) {
         connection.query('UPDATE burgers SET ? WHERE ?', [{devoured: true}, {id: burgerID}], function(err, result) {
-           if (err) throw (err);
-           callback(result);
+            if (err) throw (err);
+            callback(result);
         });
     }
 

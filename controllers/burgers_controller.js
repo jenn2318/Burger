@@ -22,8 +22,11 @@ router.get("/index", function(req, res) {
 
 // We will make a new burger
 router.post("/api/burger/make", function(req, res) {
-    burger.insertOne(req.body.burger_name, function(){
-        res.redirect('/index');
+    console.log(req.body.burger_name);
+       burger.insertOne(req.body.burger_name, function(result){
+        res.staus(200).send('burger added to the database');
+
+        //res.redirect('/index');
     });
 });
 
