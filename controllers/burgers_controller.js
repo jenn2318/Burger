@@ -5,13 +5,13 @@ let burger = require('../models/burger.js');
 
 //Let's make some routes
 
-router.get('/', function (req, res) {
-    res.redirect('/index');
+router.get("/", function (req, res) {
+   res.render('index');
 });
 
 // Send all my burgers to the DOM
 
-router.get('/index', function(req, res) {
+router.get("/index", function(req, res) {
     burger.selectAll(function(data) {
         let hbsObject = {burgers: data};
         console.log(hbsObject);
@@ -21,7 +21,7 @@ router.get('/index', function(req, res) {
 
 
 // We will make a new burger
-router.post('/buger/make', function(req, res) {
+router.post("/api/burger/make", function(req, res) {
     burger.insertOne(req.body.burger_name, function(){
         res.redirect('/index');
     });
@@ -29,7 +29,7 @@ router.post('/buger/make', function(req, res) {
 
 
 //We will devour a burger
-router.post('/burger/eat/:id', function(req, res) {
+router.post("/api/burger/eat/:id", function(req, res) {
     burger.updateOne(req.params.id, function(){
         res.redirect('/index');
     });
