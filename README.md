@@ -107,7 +107,7 @@ Create a button in index.handlebars that will submit the user input into the dat
 
 ![burger db for app](public/assets/images/burgerfile_structure.png)
 
-# Heroku Deployment Successful
+## Heroku Deployment Successful
 
 ![burger app](public/assets/images/herokudeployment.png)
 
