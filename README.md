@@ -5,6 +5,8 @@ Whenever a user submits a burger's name, your app will display the burger on the
 Each burger in the waiting area also has a Devour it! button. When the user clicks it, the burger will move to the right side of the page.
 Your app will store every burger in a database, whether devoured or not.
 
+![burger app](public/assets/images/burgerappwip.png)
+
 # Instructions
 
 App Setup
@@ -20,6 +22,7 @@ Require the following npm packages inside of the server.js file:
 *express
 *body-parser
 
+![burger server](public/assets/images/burger_server.png)
 
 # DB Setup
 
@@ -44,6 +47,8 @@ Now you're going to run these SQL files.
 ![routes for app](public/assets/images/burgerdb2_schema.png)
 
 ![seeds for app](public/assets/images/seeds.png)
+
+![burger db for app](public/assets/images/burgerdbsql.png)
 
 Make sure you're in the db folder of your app.
 Start MySQL command line tool and login: mysql -u root -p.
@@ -98,3 +103,5 @@ Create the main.handlebars file inside layouts directory.
 Setup the main.handlebars file so it's able to be used by Handlebars.
 Setup the index.handlebars to have the template that Handlebars can render onto.
 Create a button in index.handlebars that will submit the user input into the database.
+
+![burger db for app](public/assets/images/burgerfile_structure.png)
