@@ -6,41 +6,42 @@
         <h4 class="blue-font">Delicious Burgers To Eat</h4>
         <div id="ready_to_eat">
 
-    <!--Insert for the Burgers-->
-    {{#each burgers}}
-        {{#unless this.devoured}}
-            <form action="burger/eat/{{id}}" method="POST">
-             <div class="input-bgr-types">
-             <li class="form-control">{{id}}.{{burger_name}}</li>
-               <span class="input-bgr-types-btn">
-                 <button class="btn btn-success devour-button" type="submit">Devour The Burger!</button>
-                 </span>
-             </div>
-           </form>
-      {{/unless}}
-   {{/each}}
-  </div>
+            <!--Insert for the Burgers-->
+
+            {{#each burger}}
+                {{#unless this.devoured}}
+                    <li>
+                    {{this.burger_name}}
+                    <form action="create form" action="/api/burgers" method="POST">
+                        <input type="hidden" name="devoured" value="true">
+                        <button class="btn btn-sucess devour-button" type="submit">Devour The Burger!</button>
+                    </form>
+                    </li>
+                {{/unless}}
+            {{/each}}
+        </div>
+    </div>
 </div>
-  </div>
 
 <!--Right side where the eaten burger will go-->
 <div class="col-md-6">
     <h4>Burgers Already Eaten!</h4>
     <div id="already_eaten">
 
-      <!--The Burgers That Were Eaten -->
-  {{#each burgers}}
-      {{#if this.devoured}}
-          <div class="input-bgr-types">
-                <li class="form-control">{{this.id}}.{{this.burger_name}}</li>
-                <span class="input-bgr-types-btn">
-                <button class="btn btn-primary eaten-button" type="button">Eaten!</button>
-                </span>
-            </div>
+        <!--The Burgers That Were Eaten -->
+
+
+<!--Loop through the burgers and delete them-->
+{{#each burger}}
+     {{#if this.devoured}}
+            <li>
+                {{this.burger_name}}
+                <form class="create form" action="/api/burgers" method="DELETE">
+                    <input type="hidden" name="devoured" value="false">
+                    <button type="submit">EAT da burger!</button>
+                </form>
+            </li>
         {{/if}}
     {{/each}}
-
-         </div>
     </div>
 </div>
-

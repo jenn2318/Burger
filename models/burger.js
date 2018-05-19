@@ -6,24 +6,34 @@ let orm = require('../config/orm.js');
 let burger = {
 
     selectAll: function(callback) {
-        orm.selectAll("burgers", function(res) {
+        orm.selectAll("burger", function(res) {
             callback(res);
         });
     },
 
     insertOne: function(burger_name, callback) {
-        orm.insertOne(burger_name, function(res) {
+        orm.insertOne("burger",burger_name, function(res) {
             callback(res);
         });
     },
 
-    updateOne: function(burger_id, callback) {
-        orm.updateOne(burger_id, function(res) {
+    updateOne: function(id, callback) {
+        orm.updateOne(id, function(res) {
+            console.log("Burger Id:" + id);
+            callback(res);
+        });
+    },
+
+    deleteOne: function(id, callback) {
+        orm.deleteOne(id, function(res) {
+            console.log("Burger Id:" + id);
             callback(res);
         });
     }
 
 }
+
+
 
 //Export for burger file
 

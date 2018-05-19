@@ -5,3 +5,34 @@ body {
 .blue_font {
     color: blue;
 }
+
+h1{
+    color: red;
+}
+
+h4{
+    color: blue;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.containter {
+    display: flex;
+    justify-content:center;
+}
+
+.big {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+#submit-button {
+  float: left;
+}

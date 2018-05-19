@@ -6,6 +6,7 @@ let burger = require('../models/burger.js');
 //Let's make some routes
 
 router.get("/", function (req, res) {
+
    res.render('index');
 });
 
@@ -13,7 +14,7 @@ router.get("/", function (req, res) {
 
 router.get("/index", function(req, res) {
     burger.selectAll(function(data) {
-        let hbsObject = {burgers: data};
+        let hbsObject = {burger: data};
         console.log(hbsObject);
         res.render('index', hbsObject);
     });
@@ -21,10 +22,11 @@ router.get("/index", function(req, res) {
 
 
 // We will make a new burger
-router.post("/api/burger/make", function(req, res) {
+router.post("/api/burgers/", function(req, res) {
     console.log(req.body.burger_name);
        burger.insertOne(req.body.burger_name, function(result){
         res.staus(200).send('burger added to the database');
+        res.redirect('/index');
 
         //res.redirect('/index');
     });
@@ -32,11 +34,22 @@ router.post("/api/burger/make", function(req, res) {
 
 
 //We will devour a burger
-router.post("/api/burger/eat/:id", function(req, res) {
+router.put("/api/burgers/eat/:id", function(req, res) {
     burger.updateOne(req.params.id, function(){
         res.redirect('/index');
     });
 });
+
+
+//We will delete a burger
+router.delete("/api/burgers/eat/:id", function(req, res) {
+    burger.deleteOne(req.params.id, function(){
+        res.redirect('/index');
+    });
+});
+
+
+
 
 
 //Export the routes

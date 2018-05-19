@@ -7,31 +7,33 @@
 </head>
 <body>
 
+<div class="container">
+    <div class="row">
+        <img class="center" src="./assets/images/burgerpic.jpg">
+    </div>
     <div class="container">
-        <div class="row">
-          <img src="./assets/images/burgerpic.jpg">
-     </div>
-        <h1 class="big">Eat da Burger!</h1>
-<hr>
-        <!--This is where the content from index.handlebars will go-->
+    <h1 class="big">Eat da Burger!</h1>
+    </div>
+    <hr>
+    <!--This is where the content from index.handlebars will go-->
 
     {{{body}}}
 
-<br><br>
+    <br><br>
 
-<form action="/api/burger/make" method="POST">
-    <div class="row"></div>
+    <form action="/api/burgers" method="POST">
+        <div class="row"></div>
         <div class="col-md-3"></div>
         <!--Burger Input-->
-           <div class="form-group col-md-6">
-              <label for="new_burger" class="blue_font">Request a Burger!</label>
-              <textarea class="form-control" columns="7" rows="3" id="new_burger" name="burger_name"></textarea>
-            </div>
-         <div class="col-md-3"></div>
-      <!--Submit Button-->
-    <button id="submit-button" type="submit" class="btn btn-success">Place Order</button>
+        <div class="form-group col-md-6">
+            <label for="new_burger" class="blue_font">Request a Burger!</label>
+            <textarea class="form-control" columns="7" rows="3" id="new_burger" name="burger_name"></textarea>
+        </div>
+        <div class="col-md-3"></div>
+        <!--Submit Button-->
+        <button id="submit-button" type="submit" class="btn btn-success">Place Order</button>
 
-       </form>
-    </div>
-  </body>
+    </form>
+</div>
+</body>
 </html>
