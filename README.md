@@ -37,6 +37,14 @@ Still in the db folder, create a seeds.sql file. In this file, write insert quer
 Run the schema.sql and seeds.sql files into the mysql server from the command line
 Now you're going to run these SQL files.
 
+# Created Schema both ways for Testing
+
+![burger db for app](public/assets/images/burger_dbschema.png)
+
+![routes for app](public/assets/images/burgerdb2_schema.png)
+
+![seeds for app](public/assets/images/seeds.png)
+
 Make sure you're in the db folder of your app.
 Start MySQL command line tool and login: mysql -u root -p.
 With the mysql> command line tool running, enter the command source schema.sql. This will run your schema file and all of the queries in it -- in other words, you'll be creating your database.
