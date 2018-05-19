@@ -39,7 +39,7 @@ Now you're going to run these SQL files.
 
 # Created Schema both ways for Testing
 
-![burger db for app](public/assets/images/burger_db schema.png)
+![burger db for app](public/assets/images/burger_dbschema.png)
 
 ![routes for app](public/assets/images/burgerdb2_schema.png)
 
