@@ -8,7 +8,6 @@ let orm = {
     selectAll: function(table, callback) {
         connection.query("SELECT * FROM burgers", function(err, result){
             if (err) throw (err);
-            //console.log(result);
             callback(result);
         });
     },
@@ -16,10 +15,9 @@ let orm = {
     //Query to insert a new the burger
 
     insertOne: function(burger_name, callback) {
-        let query = `INSERT INTO burgers (burger_name) VALUES (?)`;
-        connection.query(query, burger_name, function(err, result) {
+        let query = `INSERT INTO burgers (burger_name, devoured) VALUES ('${burger_name}', 0)`;
+        connection.query(query, function(err, result) {
             if (err) throw err;
-            //console.log("orm.s insertone: " + result);
             callback(result);
         });
     },
@@ -28,17 +26,15 @@ let orm = {
     //Query to update and delete the burger
 
     updateOne: function(burgerID, callback) {
-        connection.query(`UPDATE burgers SET devoured =? WHERE id =?`,[1,burgerID] , function(err, result) {
+        connection.query('UPDATE burgers SET ? WHERE ?', [{devoured: true}, {id: burgerID}], function(err, result) {
             if (err) throw (err);
-            console.log(result);
             callback(result);
         });
     },
 
     deleteOne: function(burgerID, callback) {
-        connection.query('DELETE FROM TABLE ? WHERE ?', [{devoured: true}, {id: id}], function(err, result) {
+        connection.query('DELETE FROM burgers SET ? WHERE ?', [{devoured: true}, {id: burgerID}], function(err, result) {
             if (err) throw (err);
-            console.log(result);
             callback(result);
         });
     }
