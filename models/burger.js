@@ -6,7 +6,7 @@ let orm = require('../config/orm.js');
 let burger = {
 
     selectAll: function(callback) {
-        orm.selectAll("burger_name", function(res) {
+        orm.selectAll("burger", function(res) {
             callback(res);
         });
     },
@@ -19,22 +19,18 @@ let burger = {
 
     updateOne: function(id, callback) {
         orm.updateOne(id, function(res) {
-            console.log("Burger Id:" + id);
             callback(res);
         });
     },
 
-  //  deleteOne: function(id, callback) {
-    //    orm.deleteOne(id, function(res) {
-      //      console.log("Burger Id:" + id);
-        //    callback(res);
-        //});
-    //}
+    deleteOne: function(id, callback) {
+        orm.deleteOne(id, function(res) {
+            callback(res);
+        });
+    }
 
 }
 
-
-
 //Export for burger file
-
 module.exports = burger;
+
