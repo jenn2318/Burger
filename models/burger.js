@@ -6,13 +6,13 @@ let orm = require('../config/orm.js');
 let burger = {
 
     selectAll: function(callback) {
-        orm.selectAll("burger", function(res) {
+        orm.selectAll("burger_name", function(res) {
             callback(res);
         });
     },
 
     insertOne: function(burger_name, callback) {
-        orm.insertOne("burger",burger_name, function(res) {
+        orm.insertOne(burger_name, function(res) {
             callback(res);
         });
     },
@@ -24,12 +24,12 @@ let burger = {
         });
     },
 
-    deleteOne: function(id, callback) {
-        orm.deleteOne(id, function(res) {
-            console.log("Burger Id:" + id);
-            callback(res);
-        });
-    }
+  //  deleteOne: function(id, callback) {
+    //    orm.deleteOne(id, function(res) {
+      //      console.log("Burger Id:" + id);
+        //    callback(res);
+        //});
+    //}
 
 }
 

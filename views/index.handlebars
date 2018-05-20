@@ -12,7 +12,7 @@
                 {{#unless this.devoured}}
                     <li>
                     {{this.burger_name}}
-                    <form action="create form" action="/api/burgers" method="POST">
+                    <form class="create form" action="/api/burgers/eat/{{this.id}}" method="POST">
                         <input type="hidden" name="devoured" value="true">
                         <button class="btn btn-sucess devour-button" type="submit">Devour The Burger!</button>
                     </form>
@@ -36,7 +36,7 @@
      {{#if this.devoured}}
             <li>
                 {{this.burger_name}}
-                <form class="create form" action="/api/burgers" method="DELETE">
+                <form class="create form" action="/api/burgers/eat" method="DELETE">
                     <input type="hidden" name="devoured" value="false">
                     <button type="submit">EAT da burger!</button>
                 </form>
