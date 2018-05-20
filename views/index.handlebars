@@ -35,6 +35,12 @@
                 {{#if this.devoured}}
                     <li>
                         {{this.burger_name}}
+                        <form action="/api/burgers/eat/{{this.id}}"
+                              method="POST">
+                            <input type="hidden" name="devoured" value="true">
+                            <button class="btn btn-success already-eaten-button"
+                                    type="submit">Devour The Burger!</button>
+                        </form>
                     </li>
                 {{/if}}
             {{/each}}
