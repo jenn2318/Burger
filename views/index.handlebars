@@ -11,37 +11,35 @@
             {{#each burger}}
                 {{#unless this.devoured}}
                     <li>
-                    {{this.burger_name}}
-                    <form class="create form" action="/api/burgers/eat/{{this.id}}" method="POST">
-                        <input type="hidden" name="devoured" value="true">
-                        <button class="btn btn-sucess devour-button" type="submit">Devour The Burger!</button>
-                    </form>
+                        {{this.burger_name}}
+                        <form action="/api/burgers/eat/{{this.id}}"
+                              method="POST">
+                            <input type="hidden" name="devoured" value="true">
+                            <button class="btn btn-success devour-button"
+                                    type="submit">Devour The Burger!</button>
+                        </form>
                     </li>
                 {{/unless}}
             {{/each}}
         </div>
     </div>
-</div>
 
-<!--Right side where the eaten burger will go-->
-<div class="col-md-6">
-    <h4>Burgers Already Eaten!</h4>
-    <div id="already_eaten">
+    <!--Right side where the eaten burger will go-->
+    <div class="col-md-6">
+        <h4>Burgers Already Eaten!</h4>
+        <div id="already_eaten">
 
-        <!--The Burgers That Were Eaten -->
-
-
-<!--Loop through the burgers and delete them-->
-{{#each burger}}
-     {{#if this.devoured}}
-            <li>
-                {{this.burger_name}}
-                <form class="create form" action="/api/burgers/eat" method="DELETE">
-                    <input type="hidden" name="devoured" value="false">
-                    <button type="submit">EAT da burger!</button>
-                </form>
-            </li>
-        {{/if}}
-    {{/each}}
+            <!--The Burgers That Were Eaten -->
+            <!--Loop through the burgers and delete them-->
+            {{#each burger}}
+                {{#if this.devoured}}
+                    <li>
+                        {{this.burger_name}}
+                    </li>
+                {{/if}}
+            {{/each}}
+        </div>
     </div>
+
 </div>
+
