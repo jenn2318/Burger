@@ -58,7 +58,7 @@ Now you're going to run these SQL files.
 
 Testing databae again for update...
 
-![seeds for app](public/assets/images/test2sqlburgersupdate.png)
+![seeds for app](public/assets/images/test2burgersqlupdate.png)
 
 
 
