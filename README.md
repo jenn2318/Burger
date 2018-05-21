@@ -5,7 +5,16 @@ Whenever a user submits a burger's name, your app will display the burger on the
 Each burger in the waiting area also has a Devour it! button. When the user clicks it, the burger will move to the right side of the page.
 Your app will store every burger in a database, whether devoured or not.
 
-![burger app](public/assets/images/burgerappwip.png)
+![burger app](public/assets/images/burgerappstart.png)
+
+## How about adding a burger...
+![burger app](public/assets/images/burger_input.png)
+
+## Eating a burger...
+![burger app](public/assets/images/eat_da_burger.png)
+
+## Updating a burger for your database
+![burger app](public/assets/images/burger_update.png)
 
 
 # Instructions
@@ -41,15 +50,15 @@ Still in the db folder, create a seeds.sql file. In this file, write insert quer
 Run the schema.sql and seeds.sql files into the mysql server from the command line
 Now you're going to run these SQL files.
 
-# Created Schema both ways for Testing
+## Created Schema for testing
+![seeds for app](public/assets/images/burger_schema.png)
 
-![burger db for app](public/assets/images/burger_dbschema.png)
+## Database Update
+![seeds for app](public/assets/images/testsqlburgerupdate.png)
 
-![routes for app](public/assets/images/burgerdb2_schema.png)
+![seeds for app](public/assets/images/test2sqlburgerupdate.png)
 
-![seeds for app](public/assets/images/seeds.png)
 
-![burger db for app](public/assets/images/burgerdbsql.png)
 
 Make sure you're in the db folder of your app.
 Start MySQL command line tool and login: mysql -u root -p.
