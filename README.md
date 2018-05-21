@@ -56,7 +56,9 @@ Now you're going to run these SQL files.
 ## Database Update
 ![seeds for app](public/assets/images/testsqlburgerupdate.png)
 
-![seeds for app](public/assets/images/test2sqlburgerupdate.png)
+Testing databae again for update...
+
+![seeds for app](public/assets/images/test2sqlburgersupdate.png)
 
 
 
