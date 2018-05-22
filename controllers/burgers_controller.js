@@ -16,12 +16,12 @@ router.get("/", function (req, res) {
 
 // Send all my burgers to the DOM
 
-router.get("/index", function(req, res) {
-    burger.selectAll(function(data) {
-        let hbsObject = {burger: data};
-        res.render('index', hbsObject);
-    });
-});
+//router.get("/index", function(req, res) {
+  //  burger.selectAll(function(data) {
+    //    let hbsObject = {burger: data};
+      //  res.render('index', hbsObject);
+    //});
+//});
 
 
 // We will make a new burger
